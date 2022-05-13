@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Taskie</string>
+    <string name="tab_text_1">Tasks</string>
+    <string name="tab_text_2">Diary</string>
+    <string name="work_task">Work</string>
+    <string name="relax_task">Relax</string>
+    <string name="save">Save</string>
+    <string name="new_task">Task name</string>
+    <string name="back">Back</string>
+</resources>
