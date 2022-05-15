@@ -20,7 +20,7 @@ class DiaryFragment: Fragment() {
         val fab: FloatingActionButton = view.findViewById(R.id.fab_diary)
 
         fab.setOnClickListener { view ->
-            val intent = Intent(activity, EditTaskFragment::class.java)
+            val intent = Intent(activity, EditTaskActivity::class.java)
             startActivity(intent)
         }
 

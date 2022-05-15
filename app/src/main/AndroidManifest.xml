@@ -20,8 +20,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EditTaskFragment"
-            android:theme="@style/Theme.Taskie.NoActionBar">></activity>
+            android:name=".EditTaskActivity"
+            android:theme="@style/Theme.Taskie.NoActionBar" />
         <activity
             android:name=".CalendarActivity"
             android:parentActivityName=".MainActivity" />

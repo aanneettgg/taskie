@@ -3,12 +3,10 @@
 
     <item
         android:id="@+id/calendar_item"
-        android:icon="@drawable/calendar"
         android:title="@string/calendar"
         android:visible="true" />
     <item
         android:id="@+id/notifications_item"
-        android:icon="@drawable/bell"
         android:title="@string/notifications"
         android:visible="true" />
     <item
