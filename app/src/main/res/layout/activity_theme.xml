@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/one_tab_layout_C"
+        android:id="@+id/tabLayout"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,18 +16,30 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/calendar" />
+            android:text="@string/theme" />
 
     </com.google.android.material.tabs.TabLayout>
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="412dp"
-        android:layout_height="411dp"
-        android:layout_marginTop="56dp"
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="286dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/one_tab_layout_C" />
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
+        <RadioButton
+            android:id="@+id/radioButtonPeach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/peach_orange" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mint_green" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,11 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/calendar_item"
         android:icon="@drawable/calendar"
-        android:title="Calendar"
+        android:title="@string/calendar"
         android:visible="true" />
     <item
+        android:id="@+id/notifications_item"
         android:icon="@drawable/bell"
-        android:title="Notifications"
+        android:title="@string/notifications"
         android:visible="true" />
+    <item
+        android:id="@+id/theme_item"
+        android:title="@string/theme" />
 </menu>

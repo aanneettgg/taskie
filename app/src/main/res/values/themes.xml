@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Taskie" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="OverlayThemePeach" parent="Theme.Taskie">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/second_light</item>
@@ -11,9 +11,33 @@
         <item name="android:actionMenuTextColor">@color/primary_dark</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+    <style name="OverlayThemeMint" parent="Theme.Taskie">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_light_G</item>
+        <item name="colorPrimaryVariant">@color/primary_dark_G</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/second_light_G</item>
+        <item name="colorSecondaryVariant">@color/second_dark_G</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:actionMenuTextColor">@color/primary_dark_G</item>
+        <!-- Status bar color. -->
+
+    </style>
+    <!-- Base application theme. -->
+    <style name="Theme.Taskie" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:textColor">?attr/colorPrimaryVariant</item>
+        <item name="buttonTint">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.Taskie.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorControlNormal">@color/white</item>
+        <!--<item name="android:textColorPrimary">@color/white</item>-->
     </style>
 
     <style name="Theme.Taskie.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

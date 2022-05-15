@@ -4,5 +4,11 @@
     <color name="primary_light">#F9DCC5</color>
     <color name="second_dark">#E5A186</color>
     <color name="second_light">#F3CEB0</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary_dark_G">#518F25</color>
+    <color name="primary_light_G">#CADDBD</color>
+    <color name="second_dark_G">#73A550</color>
+    <color name="second_light_G">#DCE8D3</color>
+
+    <color name="white">#FFFFFF</color>
 </resources>
