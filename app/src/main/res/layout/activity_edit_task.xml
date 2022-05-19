@@ -17,18 +17,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:background="@color/white"
-            android:foregroundTint="@color/primary_light"
             android:hint="@string/new_task"
-            android:shadowColor="@color/second_light"
-            android:textColor="@color/primary_dark"
             android:textColorHighlight="@color/white"
-            android:textColorHint="#8D6E63"
-            android:textColorLink="@color/primary_dark" />
+            android:textColorHint="#8D6E63" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
@@ -42,20 +39,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButtonWork"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/work_task" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButtonRelax"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/relax_task" />
     </RadioGroup>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -66,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"

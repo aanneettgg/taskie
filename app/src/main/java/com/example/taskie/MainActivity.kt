@@ -3,22 +3,29 @@ package com.example.taskie
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.taskie.databinding.ActivityMainBinding
 import com.example.taskie.ui.main.SectionsPagerAdapter
 import com.google.android.material.tabs.TabLayout
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
-
+/**
+ * Main activity of Taskie application.
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     lateinit var sharedPreferences: SharedPreferences
-    val themeKey = "currentTheme"
+    private val themeKey = "currentTheme"
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,7 +44,11 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.elevation = 0F
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+        val date = current.format(formatter)
+
+        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager, date)
         val viewPager: ViewPager = binding.viewPager
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
@@ -45,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -53,6 +65,11 @@ class MainActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             finish()
             startActivity(intent)
+        } else if (requestCode == 2) {
+            val returnedResult: String = data?.getStringExtra("date")!!
+            val adapter = binding.viewPager.adapter as SectionsPagerAdapter
+            adapter.setDate(returnedResult)
+            adapter.notifyDataSetChanged()
         }
     }
 
@@ -62,10 +79,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.getItemId()) {
+        return when (item.itemId) {
             R.id.calendar_item -> {
                 val i = Intent(this, CalendarActivity::class.java)
-                this.startActivity(i)
+                this.startActivityForResult(i, 2)
                 true
             }
             R.id.notifications_item -> {

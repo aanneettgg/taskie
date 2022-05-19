@@ -8,11 +8,13 @@ import android.view.View
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
 
-
+/**
+ * An activity handling theme changes.
+ */
 class ThemeActivity : AppCompatActivity() {
 
     lateinit var sharedPreferences: SharedPreferences
-    val themeKey = "currentTheme"
+    private val themeKey = "currentTheme"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +37,7 @@ class ThemeActivity : AppCompatActivity() {
         radioButtonMint.setOnClickListener{
             sharedPreferences.edit().putString(themeKey, "mint").apply()
 
-            val intent = intent // from getIntent()
+            val intent = intent
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             finish()
             startActivity(intent)
