@@ -48,8 +48,8 @@ class CalendarActivity : AppCompatActivity() {
             val intent = intent
             val text = "$dayOfMonthStr-$monthStr-$year"
             intent.putExtra("date", text)
-            setResult(2, intent);
-            finish();
+            setResult(2, intent)
+            finish()
         }
     }
 

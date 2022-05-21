@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase
  * Database storing data from entities Task, Diary and Gratefulness.
  */
 @Database(
-    entities = [Task::class, Diary::class, Gratefulness::class], version = 1)
+    entities = [Task::class, Diary::class, Gratefulness::class], version = 2)
 
 abstract class TaskieDatabase: RoomDatabase() {
 

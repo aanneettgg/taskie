@@ -16,7 +16,10 @@ data class Task(
     val taskDate: Long = System.currentTimeMillis(),
 
     @ColumnInfo(name = "task_type")
-    var taskType: Boolean = false
+    var taskType: Boolean = false,
+
+    @ColumnInfo(name = "is_completed")
+    var isCompleted: Boolean = false
 ) {
     @PrimaryKey(autoGenerate = true)
     var taskId: Long = 0L

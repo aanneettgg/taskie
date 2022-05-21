@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.taskie.database.Diary
@@ -32,6 +33,8 @@ class DiaryFragment: Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_diary, container, false)
         val fab: FloatingActionButton = view.findViewById(R.id.fab_diary)
         val diaryText = view.findViewById(R.id.editMultilineTextDiary) as EditText
+        val dayText = view.findViewById(R.id.textViewDate) as TextView
+        dayText.text = date
 
         val dao = TaskieDatabase.getInstance(requireContext()).diaryDao()
         var diary: Diary? = null

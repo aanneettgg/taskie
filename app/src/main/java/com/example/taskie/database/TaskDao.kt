@@ -15,8 +15,8 @@ interface TaskDao {
     @Update
     suspend fun update(task: Task)
 
-    @Query("SELECT * from task_table WHERE date(task_date) = :key")
-    fun getTasksByDate(key: String): LiveData<List<Task>>?
+    @Query("SELECT * from task_table WHERE strftime(\"%d-%m-%Y\", task_date/1000, 'unixepoch') = :key")
+    suspend fun getTasksByDate(key: String): List<Task>
 
     @Query("SELECT * from task_table WHERE taskId = :key")
     suspend fun getTaskById(key: Long): Task?
