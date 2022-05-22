@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var sharedPreferences: SharedPreferences
     private val themeKey = "currentTheme"
+    private lateinit var date: String
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-        val date = current.format(formatter)
+        date = current.format(formatter)
 
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager, date)
         val viewPager: ViewPager = binding.viewPager
@@ -66,6 +67,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         } else if (requestCode == 2) {
             val returnedResult: String = data?.getStringExtra("date")!!
+            date = returnedResult
             val adapter = binding.viewPager.adapter as SectionsPagerAdapter
             adapter.setDate(returnedResult)
             adapter.notifyDataSetChanged()
@@ -81,6 +83,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.calendar_item -> {
                 val i = Intent(this, CalendarActivity::class.java)
+                i.putExtra("date", date)
                 this.startActivityForResult(i, 2)
                 true
             }
@@ -98,4 +101,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun dateChanged(newDate: String) {
+        date = newDate
+        val adapter = binding.viewPager.adapter as SectionsPagerAdapter
+        adapter.setDate(date)
+        adapter.notifyDataSetChanged()
+    }
 }

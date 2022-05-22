@@ -186,5 +186,6 @@ class TaskFragment: Fragment() {
         loadGratefulness()
 
         day.text = date.replace("-", ".")
+        (activity as MainActivity?)?.dateChanged(date)
     }
 }

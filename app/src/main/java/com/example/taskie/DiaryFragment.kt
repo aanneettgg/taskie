@@ -112,7 +112,10 @@ class DiaryFragment: Fragment() {
             localDate!!.plusDays(1)
         }
         date = localDate.format(formatter)
+
         loadDiary()
+
         day.text = date.replace("-", ".")
+        (activity as MainActivity?)?.dateChanged(date)
     }
 }
