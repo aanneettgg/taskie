@@ -24,8 +24,6 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager, pr
     FragmentStatePagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
         val bundle = Bundle()
         bundle.putString("date", date)
         return if (position == 0) {
