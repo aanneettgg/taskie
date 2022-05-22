@@ -4,25 +4,33 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2175" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/drawable/ic_briefcase.xml" value="0.196" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/drawable/ic_check.xml" value="0.2965" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/drawable/ic_chevron_left.xml" value="0.3675" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/drawable/ic_chevron_right.xml" value="0.3675" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/drawable/ic_delete.xml" value="0.3675" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/drawable/ic_favorite.xml" value="0.2225" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2175" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/activity_calendar.xml" value="0.33" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/activity_edit_diary.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/activity_edit_task.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/activity_main.xml" value="0.3202247191011236" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/activity_notifications.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/activity_theme.xml" value="0.4332988624612203" />
-        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/day_component.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/day_component.xml" value="0.33" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/fragment_diary.xml" value="0.3229166666666667" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/fragment_edit_task.xml" value="0.3229166666666667" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/fragment_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/fragment_task.xml" value="0.3229166666666667" />
-        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/item.xml" value="0.215625" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/fragment_task.xml" value="0.2824207492795389" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/gratefulness.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/item.xml" value="0.35737704918032787" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/items_list.xml" value="0.15" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/new_item.xml" value="0.33" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/relax_item.xml" value="0.75" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/toolbar_basic_component.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/try.xml" value="0.2796875" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/layout/work_item.xml" value="0.25" />
+        <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/menu/menu_delete.xml" value="0.22395833333333334" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/menu/menu_items.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.196" />
         <entry key="..\:/Users/anikg/AndroidStudioProjects/taskie/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.196" />

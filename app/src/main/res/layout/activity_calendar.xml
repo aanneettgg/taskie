@@ -14,6 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItemCalendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/calendar" />
@@ -22,12 +23,11 @@
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="412dp"
-        android:layout_height="411dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/one_tab_layout_C" />
+        app:layout_constraintTop_toBottomOf="@+id/one_tab_layout_C" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

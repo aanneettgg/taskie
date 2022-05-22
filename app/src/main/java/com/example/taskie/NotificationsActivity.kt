@@ -4,11 +4,15 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 
+/**
+ * An activity providing notifications.
+ */
 class NotificationsActivity : AppCompatActivity() {
 
     lateinit var sharedPreferences: SharedPreferences
-    val themeKey = "currentTheme"
+    private val themeKey = "currentTheme"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +30,12 @@ class NotificationsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_notifications)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        var builder = NotificationCompat.Builder(this)
+            .setSmallIcon(R.drawable.ic_briefcase)
+            .setContentTitle("Message from Taskie")
+            .setContentText("Your tasks are not done.")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
     }
 
 }
