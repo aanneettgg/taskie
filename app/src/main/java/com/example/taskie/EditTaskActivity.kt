@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -17,8 +18,6 @@ import com.example.taskie.database.TaskieDatabase
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.launch
 import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.ZoneId
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 
@@ -62,6 +61,7 @@ class EditTaskActivity : AppCompatActivity() {
                 task = dao.getTaskById(taskId)
                 if (task != null) {
                     taskText.setText(task?.taskName)
+                    taskType = task!!.taskType
                     if (task!!.taskType) {
                         radioButtonRelax.isChecked = true
                         radioButtonWork.isChecked = false
@@ -74,25 +74,30 @@ class EditTaskActivity : AppCompatActivity() {
         }
 
         buttonSave.setOnClickListener {
-            if (task != null) {
-                task?.taskName = taskText.text.toString()
-                task?.taskType = taskType
-                lifecycleScope. launch {
-                    dao.update(task!!)
+            val isMaxCount = intent.getBooleanExtra("maxRelax", false)
+            if (!isMaxCount || !taskType || task!!.taskType) {
+                if (task != null) {
+                    task?.taskName = taskText.text.toString()
+                    task?.taskType = taskType
+                    lifecycleScope. launch {
+                        dao.update(task!!)
+                    }
+                } else {
+                    val date = intent.getStringExtra("date")
+                    val formatter: DateTimeFormatter =
+                        DateTimeFormatter.ofPattern("dd-MM-yyyy")
+                    val localDate: LocalDate? = LocalDate.parse(date, formatter)
+                    val timeInMilliseconds: Long =
+                        (localDate!!.atStartOfDay(ZoneOffset.UTC).toEpochSecond() + 1) * 1000
+                    val newTask = Task(taskText.text.toString(), timeInMilliseconds, taskType)
+                    lifecycleScope.launch {
+                        dao.insert(newTask)
+                    }
                 }
+                finish()
             } else {
-                val date = intent.getStringExtra("date")
-                val formatter: DateTimeFormatter =
-                    DateTimeFormatter.ofPattern("dd-MM-yyyy")
-                val localDate: LocalDate? = LocalDate.parse(date, formatter)
-                val timeInMilliseconds: Long =
-                    (localDate!!.atStartOfDay(ZoneOffset.UTC).toEpochSecond() + 1) * 1000
-                val newTask = Task(taskText.text.toString(), timeInMilliseconds, taskType)
-                lifecycleScope.launch {
-                    dao.insert(newTask)
-                }
+                Toast.makeText(this, "You already have 5 relax tasks.", Toast.LENGTH_LONG).show()
             }
-            finish()
         }
 
         buttonBack.setOnClickListener {
@@ -118,7 +123,6 @@ class EditTaskActivity : AppCompatActivity() {
         lifecycleScope. launch {
             dao.delete(task!!)
         }
-
         finish()
 
         return true
